@@ -1,0 +1,13 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "git.confirmSync": false,
+  "files.associations": {
+      "*.js": "javascriptreact"
+  },
+  "files.eol": "\n",
+  "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.tabSize": 2
+}
