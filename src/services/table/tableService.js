@@ -16,7 +16,7 @@ const Fields = [
 ]
 
 export const getData = (pagination, where, other) => {
-  return User.paginate({
+  return paginate({
     table: Table,
     fields: Fields,
     pagination,
@@ -26,7 +26,7 @@ export const getData = (pagination, where, other) => {
 }
 
 export const getDataCount = (where, other) => {
-  return User.count({
+  return count({
     table: Table,
     fields: Fields,
     where,
@@ -35,7 +35,7 @@ export const getDataCount = (where, other) => {
 }
 
 export const getDataById = (id) => {
-  return User.findOne({
+  return Table.findOne({
     where: {
       id
     }
@@ -43,14 +43,14 @@ export const getDataById = (id) => {
 }
 
 export const insertData = (data, createdBy) => {
-  return User.create({
+  return Table.create({
     name: data.name,
     createdBy
   })
 }
 
-export const updateData = (id, data, updatedBy) =>{ 
-  return User.update({
+export const updateData = (id, data, updatedBy) =>{
+  return Table.update({
     name: data.name,
     updatedBy,
     updatedAt: sequelize.literal('NOW()')
@@ -62,7 +62,7 @@ export const updateData = (id, data, updatedBy) =>{
 }
 
 export const deleteData = (id, deletedBy) => {
-  return User.update({
+  return Table.update({
     deletedBy,
     deletedAt: sequelize.literal('NOW()')
   }, {
